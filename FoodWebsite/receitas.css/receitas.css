@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'pixel Digivolve';
+    src: url('../fonts/Pixel Digivolve.otf') format('truetype');
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+    font-family: 'pixel Digivolve', sans-serif;
+}
+
+header {
+    height: 80px;
+    background: linear-gradient(71deg, #080509, #1a171c, #080509);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    border-radius: 15px;
+    border: 2px solid transparent;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 800;
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 45px;
+    position: relative;
+    transition: border-color 0.3s ease;
+}
+
+.navbar a:hover {
+    border-color: #1e495d;
+}
+
+.logo {
+    font-family: 'pixel Digivolve', sans-serif;
+    font-size: 28px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.logo2 {
+    font-size: 32px;
+    color: #bba7a7;
+    font-weight: 700;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background-image: url('Images/boquinhaberta.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: background-image 0.3s ease;
+    animation: move 5s linear infinite, chomp 0.5s steps(2) infinite;
+}
+
+@keyframes chomp {
+    0%, 100% { background-image: url('Images/boquinhafechada.png'); }
+    50% { background-image: url('Images/boquinhaberta.png'); }
+}
+
+@keyframes move {
+    0% { left: 3%; }
+    100% { left: 20%; }
+}
+
+.logo2:hover {
+    background-image: url('Images/boquinhafechada.png');
+    animation: none;
+}
+
+.heo {
+    background: url(https://images.unsplash.com/photo-1707616954324-99c89a78a20d?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 140px 0;
+}
+
+.class-heo h2 {
+    font-family: "Brush Script MT", sans-serif;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+#checklist {
+    font-size: 18px;
+    --background: transparent;
+    --text: #fff;
+    --check: #4F29F0;
+    --disabled: #4F29F0;
+    --border-radius: 10px;
+    background: var(--background);
+    box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05);
+    padding: 30px 45px;
+    display: grid;
+    grid-template-columns: 30px auto;
+    align-items: center;
+    margin-left: 65px;
+}
+
+label {
+    color: var(--text);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+    background: var(--background);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+input[type="checkbox"]:checked::before {
+    animation: check-01 0.4s ease forwards;
+}
+
+input[type="checkbox"]:checked + label {
+    color: var(--disabled);
+    animation: move 0.3s ease forwards;
+}
+
+@keyframes check-01 {
+    0%, 50% { width: 0px; top: auto; transform: rotate(0); }
+    51% { width: 0px; top: 8px; transform: rotate(45deg); }
+    100% { width: 5px; top: 8px; transform: rotate(45deg); }
+}
+
+@keyframes move {
+    50% { padding-left: 8px; }
+    100% { padding-right: 4px; }
+}
+
+#ingredientes,
+.preparo h2 {
+    color: white;
+    font-family: "Brush Script MT", sans-serif;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.preparo ol {
+    list-style-type: decimal;
+    color: white;
+    font-size: 19px;
+    padding: 20px 50px 200px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.table_header h2 {
+    font-size: 30px;
+    padding: 50px 0 20px;
+    text-align: center;
+    color: white;
+}
+
+.table_body {
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    padding-bottom: 200px;
+}
+
+table {
+    width: 90%;
+    grid-column: 2 / 11;
+    border-collapse: collapse;
+    padding: 1rem;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: center;
+}
+
+thead th {
+    background-color: #222121;
+    color: #fff;
+}
+
+footer {
+    background: linear-gradient(71deg, #080509, #1a171c, #080509);
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f8f8f8;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #222121;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: black;
+}
+
+@media only screen and (max-width: 768px) {
+    .heo h2 {
+        font-size: 28px;
+    }
+}
