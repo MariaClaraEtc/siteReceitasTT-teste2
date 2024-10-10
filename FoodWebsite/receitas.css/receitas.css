@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 @font-face {
     font-family: 'pixel Digivolve';
     src: url('../fonts/Pixel Digivolve.otf') format('truetype');
@@ -38,15 +42,16 @@ header {
 
 .navbar {
     display: flex;
+    align-items: center;
 }
 
 .navbar a {
-    font-size: 18px;
+    font-size: 15px;
     color: #fff;
-    font-weight: 800;
+    font-weight: 500;
     text-decoration: none;
     margin-left: 10px;
-    padding: 10px 20px;
+    padding: 10px 8px;
     border: 2px solid transparent;
     border-radius: 45px;
     position: relative;
@@ -54,7 +59,7 @@ header {
 }
 
 .navbar a:hover {
-    border-color: #1e495d;
+    border-color: #4F29F0;
 }
 
 .logo {
@@ -62,35 +67,49 @@ header {
     font-size: 28px;
     color: #fff;
     font-weight: 700;
+    text-decoration: none;
 }
 
-.logo2 {
-    font-size: 32px;
-    color: #bba7a7;
-    font-weight: 700;
-    position: absolute;
-    width: 90px;
-    height: 90px;
-    background-image: url('Images/boquinhaberta.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    transition: background-image 0.3s ease;
-    animation: move 5s linear infinite, chomp 0.5s steps(2) infinite;
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
 }
 
-@keyframes chomp {
-    0%, 100% { background-image: url('Images/boquinhafechada.png'); }
-    50% { background-image: url('Images/boquinhaberta.png'); }
+.menu-icon div {
+    height: 4px;
+    width: 30px;
+    background: white;
+    margin: 3px 0;
+    transition: all 0.3s;
 }
 
-@keyframes move {
-    0% { left: 3%; }
-    100% { left: 20%; }
+
+#menu-toggle {
+    display: none;
 }
 
-.logo2:hover {
-    background-image: url('Images/boquinhafechada.png');
-    animation: none;
+#menu-toggle:checked + .menu-icon div:nth-child(1) {
+    transform: rotate(45deg);
+    top: 8px;
+}
+
+#menu-toggle:checked + .menu-icon div:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-toggle:checked + .menu-icon div:nth-child(3) {
+    transform: rotate(-45deg);
+    top: -8px;
+}
+
+#menu-toggle:checked ~ .navbar {
+    display: flex;
 }
 
 .heo {
@@ -119,10 +138,13 @@ header {
     background: var(--background);
     box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05);
     padding: 30px 45px;
-    display: grid;
-    grid-template-columns: 30px auto;
-    align-items: center;
-    margin-left: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 auto;
+    width: fit-content;
+    border-radius: 10px;
+    margin-left: 20%;
 }
 
 label {
@@ -140,6 +162,7 @@ input[type="checkbox"] {
     background: var(--background);
     position: relative;
     transition: all 0.3s ease;
+    margin-right: 10px;
 }
 
 input[type="checkbox"]:checked::before {
@@ -165,10 +188,11 @@ input[type="checkbox"]:checked + label {
 #ingredientes,
 .preparo h2 {
     color: white;
-    font-family: "Brush Script MT", sans-serif;
-    font-size: 25px;
+    font-family: 'pixel Digivolve', sans-serif;
+    font-size: 30px;
     text-align: center;
-    margin-bottom: 10px;
+    margin-top: 60px;
+    margin-bottom: 20px;
 }
 
 .preparo ol {
@@ -181,8 +205,8 @@ input[type="checkbox"]:checked + label {
 }
 
 .table_header h2 {
-    font-size: 30px;
-    padding: 50px 0 20px;
+    font-size: 19px;
+    padding: 1px 0 20px;
     text-align: center;
     color: white;
 }
@@ -207,8 +231,36 @@ th, td {
 }
 
 thead th {
-    background-color: #222121;
+    background-color: #4F29F0;
     color: #fff;
+}
+
+#video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#video-container iframe {
+    max-width: 600px;
+    margin: 50px;
+}
+
+
+.preguica h3 {
+    color: white;
+    text-align: center;
+    font-size: 22px;
+}
+
+#trivia {
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 30px;
+    margin-bottom: 80px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 footer {
@@ -216,7 +268,13 @@ footer {
     padding: 20px 0;
     text-align: center;
     color: #fff;
+    font-size: small;
 }
+
+#copyright {
+    text-decoration: none;
+}
+
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -227,15 +285,46 @@ footer {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #222121;
-}
-
-::-webkit-scrollbar-thumb:hover {
     background: black;
 }
 
+::-webkit-scrollbar-thumb:hover {
+    background: #4F29F0;
+}
+
+
 @media only screen and (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: #1a171c;
+        width: 100%;
+    }
+
+    #menu-toggle:checked + .menu-icon + .navbar {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
     .heo h2 {
         font-size: 28px;
+    }
+
+    #checklist {
+        margin-left: 10%;
+    }
+
+    
+    .navbar a {
+        margin: 10px 0; 
+        padding: 15px 20px; 
+        width: 100%; 
+        text-align: center; 
     }
 }
