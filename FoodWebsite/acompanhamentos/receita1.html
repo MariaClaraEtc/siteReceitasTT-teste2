@@ -12,6 +12,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         @font-face {
             font-family: 'pixel Digivolve';
             src: url('../fonts/Pixel Digivolve.otf') format('truetype');
@@ -239,13 +243,13 @@
             color: #fff;
         }
 
-        .video-container {
+        #video-container {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .video-container iframe {
+        #video-container iframe {
             max-width: 600px;
             margin: 50px;
         }
@@ -254,13 +258,13 @@
         .preguica h3 {
             color: white;
             text-align: center;
-            font-size: 20px;
+            font-size: 22px;
         }
 
         #trivia {
             color: white;
             text-align: center;
-            font-size: 14px;
+            font-size: 16px;
             margin-top: 30px;
             margin-bottom: 80px;
             margin-left: 60px;
@@ -345,9 +349,9 @@
                 <div></div>
             </label>
             <nav class="navbar">
-                <a href="#ingredients">Ingredientes</a>
-                <a href="#preparation">Modo de Preparo</a>
-                <a href="#trivia">Você sabia?</a>
+                <a href="#ingredientes">Ingredientes</a>
+                <a href="#preparo">Modo de Preparo</a>
+                <a href="#video-container">Tutorial</a>
             </nav>
         </div>
     </header>
@@ -361,15 +365,15 @@
     <h2 id="ingredientes">Ingredientes</h2>
     <div id="checklist">
         <input id="01" type="checkbox" name="i" value="1">
-        <label for="01">Bread</label>
+        <label for="01">Sugar</label>
         <input id="02" type="checkbox" name="i" value="2">
-        <label for="02">Cheese</label>
+        <label for="02">Spice</label>
         <input id="03" type="checkbox" name="i" value="3">
-        <label for="03">Coffee</label>
+        <label for="03">Everything nice</label>
     </div>
 
     <div class="preparo">
-        <h2 id="preparation">Modo de preparo</h2>
+        <h2 id="preparo">Modo de preparo</h2>
         <ol>
             <li>Cozinhe as batatas até ficarem bem moles.</li>
             <br>
@@ -408,7 +412,7 @@
     </main>
 
 
-    <div class="video-container">
+    <div id="video-container">
         <iframe src="https://www.youtube.com/embed/K4DyBUG242c?si=OTuWGCbCkEh510bH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 
