@@ -10,14 +10,14 @@ html {
 
 @font-face {
     font-family: 'pixel Digivolve';
-    src: url('../fonts/Pixel Digivolve.otf') format('truetype');
+    src: url('../fonts/junigarden_swash/JunigardenSwash_PERSONAL_USE_ONLY.otf') format('truetype');
 }
 
 body {
     width: 100%;
     min-height: 100vh;
     background-color: black;
-    font-family: 'pixel Digivolve', sans-serif;
+    font-family: '', sans-serif;
 }
 
 header {
@@ -46,6 +46,7 @@ header {
 }
 
 .navbar a {
+    font-family: 'pixel Digivolve', sans-serif;
     font-size: 15px;
     color: #fff;
     font-weight: 500;
@@ -122,14 +123,11 @@ header {
     padding: 140px 0;
 }
 
-.class-heo h2 {
-    font-family: "Brush Script MT", sans-serif;
-    font-size: 40px;
-    margin-bottom: 10px;
-}
+
 
 #checklist {
-    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
     --background: transparent;
     --text: #fff;
     --check: #4F29F0;
@@ -205,7 +203,8 @@ input[type="checkbox"]:checked + label {
 }
 
 .table_header h2 {
-    font-size: 19px;
+    font-family: 'pixel Digivolve', sans-serif;
+    font-size: 25px;
     padding: 1px 0 20px;
     text-align: center;
     color: white;
@@ -213,6 +212,7 @@ input[type="checkbox"]:checked + label {
 }
 
 .table_body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     color: white;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -249,12 +249,14 @@ thead th {
 
 
 .preguica h3 {
+    font-family: 'pixel Digivolve', sans-serif;
     color: white;
     text-align: center;
     font-size: 22px;
 }
 
 #trivia {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     color: white;
     text-align: center;
     font-size: 16px;
@@ -265,6 +267,7 @@ thead th {
 }
 
 footer {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     background: linear-gradient(71deg, #080509, #1a171c, #080509);
     padding: 20px 0;
     text-align: center;

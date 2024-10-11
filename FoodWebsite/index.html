@@ -3,19 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/FoodWebsite/Images/burger-quest.ico.ico">
     <link rel="stylesheet" href="style.css">
-    <title>FoodQuest</title>
+    <link rel="icon" href="Images/favicon.ico">
+    <title>GostosoTudo</title>
     <style>
-        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            background: black;
+        }
+
+        header {
+            height: 80px;
+            background: linear-gradient(71deg, #080509, #1a171c, #080509);
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar {
+            display: none;
+        }
+
+        .navbar a {
+            position: relative;
+            font-size: 18px;
+            color: #fff;
+            font-weight: 800;
+            text-decoration: none;
+            margin-left: 40px;
+        }
+
+        .navbar a::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            transition: .3s;
+        }
+
+        .navbar a:hover::before {
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 32px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .heo {
+            background: url(https://images.unsplash.com/photo-1608835291093-394b0c943a75?q=80&w=1772&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 140px 0;
+        }
+
+        .class-heo h2 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .class-heo p {
+            padding: 10px;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f8f8f8;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #222121;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: black;
+        }
+
+        .recipes {
+            padding: 50px 0;
+        }
+
+        .recipes h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 25px;
+        }
+
+        .recipe-section {
+            width: 90%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            column-gap: 10px;
+        }
+
+        .recipe-card {
+        background: #fff;
+        margin: 30px 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-decoration: none; /* Remove o sublinhado do link */
+        color: inherit; /* Mantém a cor do texto */
+        transition: transform 0.3s ease; /* Smooth transition */
+    }
+
+    .recipe-card:hover {
+        transform: scale(1.05); /* Increase size slightly */
+    }
+
+        .recipe-card a {
+            display: block; /* Faz o link ocupar todo o espaço do card */
+            height: 100%; /* Garante que o link ocupe toda a altura do card */
+        }
+
+        .recipe-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .recipe-card h2,
+        .recipe-card p {
+            padding: 20px;
+        }
+
+
+        .recipe-card a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background: linear-gradient(71deg, #080509, #1a171c, #080509);
+            color: #fff;
+            padding: 15px 0;
+            cursor: pointer;
+        }
+
+        footer {
+            background: linear-gradient(71deg, #080509, #1a171c, #080509);
+            padding: 20px 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            padding: 20px;
+            text-align: right;
+            cursor: pointer;
+            display: block;
+        }
+
+        @media only screen and (min-width: 768px) {
+            .menu-icon {
+                display: none;
+            }
+
+            .navbar {
+                display: block;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .heo h2 {
+                font-size: 28px;
+            }
+        }
+
+
     </style>
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <a href="index.html" class="logo">FOOD QUEST</a>
-            <a href="index.html" class="logo2"></a>
+            <a href="index.html" class="logo">GostosoTudo</a>
             <nav class="navbar">
+                <div class="menu-icon">&#9776;</div>
                 <a href="#">Home</a>
                 <a href="#">About</a>
                 <a href="#">Contact</a>
@@ -23,51 +214,72 @@
         </div>
     </header>
 
-    <div class="stars"> 
-        <section class="heo">
-            <div class="class-heo">
-                <div id="headerImage">
-                    <img src="Images/naoeholuffycomendo.png" alt="posheader">
-                    <div class="welcome-message">Bem-vindos ao Food Quest!</div>
-                    <br>
-                    <br>
-                    <div class="text-content">
-                        <span>Aqui, a paixão por culinária se une ao universo geek, trazendo receitas inspiradas em filmes, jogos e séries que vão transformar sua cozinha em uma verdadeira aventura!</span>
-                    </div>
-                </div>
+    <section class="heo">
+        <div class="class-heo">
+            <h2>Seja bem-vindo ao GostosoTudo!</h2>
+            <p>Aqui você encontra uma variedade de pratos deliciosos e fáceis de preparar, desde opções saudáveis até sobremesas irresistíveis. Junte-se a nós e descubra o prazer de cozinhar!</p>
+        </div>
+    </section>
+
+    <section class="recipes">
+        <h1>Receitas deliciosas da nossa cozinha para a sua!</h1>
+
+        <div class="recipe-section">
+            <div class="recipe-card">
+                <a href="entradas.html">
+                    <img src="https://images.unsplash.com/photo-1579631542761-d7c4e913f8d4?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="categoria1">
+                    <h2>Entradas</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, ipsum quibusdam quod in, labore nostrum voluptates cumque possimus sit corrupti esse magnam nisi at maxime, animi aut tempora repellat blanditiis!</p>
+                </a>
             </div>
-        </section>
 
-        <section class="recipes">
-            <h1>Receitas deliciosas da nossa cozinha para a sua!</h1>
-            <div class="recipe-section">
-                <div class="recipe-card">
-                    <a href="/FoodWebsite/acompanhamentos/receita1.html"><img src="https://images.unsplash.com/photo-1579631542761-d7c4e913f8d4?q=80" alt="Receita 1"></a>
-                    <h2>Receita 1</h2>
-                    <p>Descrição breve da receita 1.</p>
-                    <a href="/FoodWebsite/acompanhamentos/receita1.html">Ver Receita</a>
-                </div>
-                <div class="recipe-card">
-                    <a href="/FoodWebsite/acompanhamentos/receita2.html"><img src="https://images.unsplash.com/photo-1579631542761-d7c4e913f8d4?q=80" alt="Receita 2"></a>
-                    <h2>Receita 2</h2>
-                    <p>Descrição breve da receita 2.</p>
-                    <a href="/FoodWebsite/acompanhamentos/receita2.html">Ver Receita</a>
-                </div>
-                <div class="recipe-card">
-                    <a href="/FoodWebsite/acompanhamentos/receita3.html"><img src="https://images.unsplash.com/photo-1579631542761-d7c4e913f8d4?q=80" alt="Receita 3"></a>
-                    <h2>Receita 3</h2>
-                    <p>Descrição breve da receita 3.</p>
-                    <a href="/FoodWebsite/acompanhamentos/receita3.html">Ver Receita</a>
-                </div>
-
-                <!-- Duplicate recipe cards removed -->
+            <div class="recipe-card">
+                <a href="entradas.html">
+                    <img src="https://images.unsplash.com/photo-1579631542761-d7c4e913f8d4?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="categoria1">
+                    <h2>Entradas</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, ipsum quibusdam quod in, labore nostrum voluptates cumque possimus sit corrupti esse magnam nisi at maxime, animi aut tempora repellat blanditiis!</p>
+                </a>
             </div>
-        </section>
 
-        <footer>
-            <p>&copy; 2024 FoodQuest.</p>
-        </footer>
-    </div>
+            <div class="recipe-card">
+                <a href="entradas.html">
+                    <img src="https://images.unsplash.com/photo-1579631542761-d7c4e913f8d4?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="categoria1">
+                    <h2>Entradas</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, ipsum quibusdam quod in, labore nostrum voluptates cumque possimus sit corrupti esse magnam nisi at maxime, animi aut tempora repellat blanditiis!</p>
+                </a>
+            </div>
+
+            <div class="recipe-card">
+                <a href="entradas.html">
+                    <img src="https://images.unsplash.com/photo-1579631542761-d7c4e913f8d4?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="categoria1">
+                    <h2>Entradas</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, ipsum quibusdam quod in, labore nostrum voluptates cumque possimus sit corrupti esse magnam nisi at maxime, animi aut tempora repellat blanditiis!</p>
+                </a>
+            </div>
+
+            <div class="recipe-card">
+                <a href="entradas.html">
+                    <img src="https://images.unsplash.com/photo-1579631542761-d7c4e913f8d4?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="categoria1">
+                    <h2>Entradas</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, ipsum quibusdam quod in, labore nostrum voluptates cumque possimus sit corrupti esse magnam nisi at maxime, animi aut tempora repellat blanditiis!</p>
+                </a>
+            </div>
+
+            <div class="recipe-card">
+                <a href="entradas.html">
+                    <img src="https://images.unsplash.com/photo-1579631542761-d7c4e913f8d4?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="categoria1">
+                    <h2>Entradas</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, ipsum quibusdam quod in, labore nostrum voluptates cumque possimus sit corrupti esse magnam nisi at maxime, animi aut tempora repellat blanditiis!</p>
+                </a>
+            </div>
+
+            
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 GostosoTudo</p>
+    </footer>
 </body>
 </html>
-

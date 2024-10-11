@@ -2,97 +2,89 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-@font-face {
-    font-family: 'Pixel Digivolve';
-    src: url('../fonts/Pixel Digivolve.otf') format('truetype');
+    font-family: sans-serif;
 }
 
 body {
     width: 100%;
     min-height: 100vh;
-    background-color: black;
-    font-family: 'Pixel Digivolve', sans-serif;
-    color: #fff;
+    background: black;
 }
 
 header {
     height: 80px;
+    width: 100%;
     background: linear-gradient(71deg, #080509, #1a171c, #080509);
+    color: #fff;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    border-radius: 15px;
 }
 
 .container {
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
 }
 
+/* PQ N FUNCIONAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA */
 .navbar {
-    display: flex;
-    flex-wrap: wrap;
+    display: none;
 }
 
 .navbar a {
-    font-size: 20px;
+    position: relative;
+    font-size: 18px;
     color: #fff;
-    font-weight: 700;
-    text-decoration: none;
-    margin-left: 10px;
-    padding: 5px;
-    border-radius: 45px;
-    transition: border-color 0.3s;
-}
-
-.navbar a:hover {
-    border-color: #1e495d;
-}
-
-.logo {
-    color: #ffffff;
-    font-size: 30px;
     font-weight: 800;
     text-decoration: none;
+    margin-left: 40px;
 }
 
-.logo2 {
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: .3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+
+/* nav ul li {
+    list-style: none;
+    display: inline;
+    margin-right: 20px;
+    font-weight: 550;
+} */
+
+.logo {
     font-size: 32px;
-    width: 90px;
-    height: 90px;
-    background-image: url('Images/boquinhaberta.png');
-    background-size: contain;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.heo {
+    background: url(https://images.unsplash.com/photo-1608835291093-394b0c943a75?q=80&w=1772&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    width: 100%;
+    height: auto;
     background-repeat: no-repeat;
-    transition: background-image 0.3s ease;
-    animation: move 5s linear infinite, chomp 0.5s steps(2) infinite;
+    background-size: cover;
+    background-position: center;
+    color:#fff;
+    text-align: center;
+    padding: 140px 0;
 }
 
-@keyframes chomp {
-    0%, 100% {
-        background-image: url('Images/boquinhafechada.png');
-    }
-    50% {
-        background-image: url('Images/boquinhaberta.png');
-    }
-}
-
-@keyframes move {
-    0% { left: 3%; }
-    100% { left: 20%; }
-}
-
-.logo2:hover {
-    background-image: url('Images/boquinhafechada.png');
-    animation: none;
-}
-
-.class-heo h2,
-.recipes h1 {
+.class-heo h2 {
     font-size: 35px;
     margin-bottom: 10px;
     text-align: center;
@@ -103,163 +95,119 @@ header {
     font-size: 25px;
     margin-bottom: 10px;
     text-align: center;
+} 
+
+/* --------------SCROLLBAR (EXPERIMENTAL)---------------- */
+
+::-webkit-scrollbar {
+    width: 10px;
 }
+  
+
+::-webkit-scrollbar-track {
+    background: #f8f8f8;
+}
+  
+  
+::-webkit-scrollbar-thumb {
+    background: #222121;
+}
+  
+ 
+::-webkit-scrollbar-thumb:hover {
+    background: black;
+}
+
+/* ------------------RECEITASAAAAAA----------------- */
 
 .recipes {
     padding: 50px 0;
+
+}
+
+.recipes h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 25px;
 }
 
 .recipe-section {
     width: 90%;
     margin: 0 auto;
-    margin-bottom: 40px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     column-gap: 10px;
 }
 
 .recipe-card {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
-    background: #222;
+    background: #fff;
+    margin: 30px 10px;
     border-radius: 5px;
+    border: 1px solid #ccc;
     overflow: hidden;
-}
-
-.recipe-card:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rbga(0, 0, 0, 0.1);
 }
 
 .recipe-card img {
-    object-fit: cover;
     width: 100%;
-    height: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
-.recipe-card h2,
+.recipe-card h2 {
+    font-size: 25px;
+    padding: 20px;
+    background-color: transparent;
+}
+
 .recipe-card p {
-    font-size: 20px;
-    padding: 10px;
-    color: #ddd;
+    font-size: 22px;
+    padding: 20px;
 }
 
 .recipe-card a {
     display: block;
     text-align: center;
     text-decoration: none;
-    background: #444;
+    background: #222121;
     color: #fff;
-    padding: 10px 0;
-    transition: background 0.3s;
-}
-
-.recipe-card a:hover {
-    background: #666;
+    padding: 15px 0;
+    cursor: pointer;
 }
 
 footer {
-    margin-top: 20px;
     background: linear-gradient(71deg, #080509, #1a171c, #080509);
     padding: 20px 0;
+    color: #fff;
     text-align: center;
 }
 
-#headerImage {
-    position: relative;
-    text-align: center;
-    margin: 20px 0;
-}
+/* ---------media query pq selfhate é o melhor self impulse------------ */
 
-#headerImage img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
+.menu-icon {
+    font-size: 24px;
+    padding: 20px;
+    text-align: right;
+    cursor: pointer;
     display: block;
-    margin: 0 auto;
 }
 
-.welcome-message {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 36px;
-    font-weight: bold;
-    text-shadow: 0 0 10px rgba(234, 216, 216, 0.7);
-}
+@media only screen and (min-width: 768px) {
+    .menu-icon {
+        display: none;
+    }
 
-.text-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ffffff;
-    max-width: 850px;
-    text-align: center;
-}
+    .navbar {
+        display: block;
+    }
 
-.text-content span {
-    display: block;
-    font-size: 20px;
-    line-height: 1.8;
-    letter-spacing: 1px;
-    word-spacing: 2px;
-    margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .navbar a {
-        font-size: 18px;
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
-
-    .class-heo h2 {
+    .heo h2 {
         font-size: 28px;
     }
-
-    .recipes h1 {
-        font-size: 24px;
-    }
-
-    .recipe-card img {
-        height: 120px; /* Adjusted height for mobile */
-    }
-
-    .welcome-message {
-        font-size: 24px; /* Adjusted for mobile */
-    }
-
-    .text-content {
-        font-size: 16px; /* Adjusted for mobile */
-    }
-
-    .text-content span {
-        font-size: 14px; /* Adjusted for mobile */
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .logo2 {
-        width: 70px; /* Adjust logo size for mobile */
-        height: 70px;
-    }
-
-    .recipe-card h2 {
-        font-size: 18px; /* Adjusted for mobile */
-    }
-
-    .recipe-card p {
-        font-size: 16px; /* Adjusted for mobile */
-    }
+    
 }

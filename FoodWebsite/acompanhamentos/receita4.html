@@ -1,348 +1,125 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="">
-  <link rel="icon" href="Images/favicon.ico">
-  <title>Berinjela refogada</title>
-  <Style>
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: sans-serif;
-    }
-
-    body {
-        width: 100%;
-        min-height: 100vh;
-        background: #f8f8f8;
-    }
-
-    header {
-        height: 80px;
-        width: 100%;
-        background: #222121;
-        color: #fff;
-        display: flex;
-        align-items: center;
-    }
-
-    .container {
-        width: 90%;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    /* PQ N FUNCIONAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA */
-    .navbar {
-        display: none;
-    }
-
-    .navbar a {
-        position: relative;
-        font-size: 18px;
-        color: #fff;
-        font-weight: 800;
-        text-decoration: none;
-        margin-left: 40px;
-    }
-
-    .navbar a::before {
-        content: '';
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: #fff;
-        transition: .3s;
-    }
-
-    .navbar a:hover::before {
-        width: 100%;
-    }
-
-    .logo {
-        font-size: 32px;
-        color: #fff;
-        text-decoration: none;
-        font-weight: 700;
-    }
-
-    .heo {
-        background: url(https://images.unsplash.com/photo-1594576182733-ad4ec76e674f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-        width: 100%;
-        height: auto;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        color:#fff;
-        text-align: center;
-        padding: 140px 0;
-    }
-
-    .class-heo h2 {
-        font-family: "Brush Script MT", sans-serif;
-        font-size: 70px;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-
-    .ingredientes h2 {
-        font-family: "Brush Script MT", sans-serif;
-        padding: 10px;
-        font-size: 55px;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-
-    .ingredientes ul {
-        padding: 10px;
-        font-size: 22px;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-
-    .preparo h2 {
-        font-family: "Brush Script MT", sans-serif;
-        padding: 10px;
-        font-size: 50px;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-
-    .preparo ol {
-        padding: 10px;
-        font-size: 22px;
-        margin-bottom: 10px;
-        text-align: center;
-        list-style: none;
-    }
-
-    /* main.table {
-        width: 45vw;
-        height: 18vh;
-        background-color: rgba(202, 24, 24, 0.333);
-
-        overflow: hidden;
-    } */
-
-    table:hover {
-        backdrop-filter: blur(7px);
-        box-shadow: 0 .4rem .8rem #0005;
-        border-radius: .8rem;
-    }
-
-    .table_header h2 {
-        font-family: "Brush Script MT", sans-serif;
-        font-size: 50px;
-        text-align: center;
-        padding-top: 50px;
-        padding-bottom: 20px;
-    }
-
-    table {
-        width: 90%;
-
-        border-collapse: separate;
-        padding: 1rem;
-    }
-    
-    th {
-        border-collapse: collapse;
-        padding: 1rem;
-    }
-    
-    td {
-        border-collapse: collapse;
-        padding: 1rem;
-        text-align: center;
-    }
-
-    thead th {
-        background-color: #222121;
-        color: #fff;
-    }
-
-    /* .video {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-}
-    .iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    } */
-
-    .preguica {
-        padding: 10px;
-        font-size: 25px;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-
-    .preguica h2 {
-        font-family: "Brush Script MT", sans-serif;
-        padding: 10px;
-        font-size: 50px;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-
-    .preguica h3 {
-        font-family: "Brush Script MT", sans-serif;
-        padding: 10px;
-        font-size: 38px;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-
-    footer {
-    background: #222121;
-    padding: 20px 0;
-    color: #fff;
-    text-align: center;
-    }
-
-    ::-webkit-scrollbar {
-        width: 10px;
-    }
-      
-
-    ::-webkit-scrollbar-track {
-        background: #f8f8f8;
-    }
-      
-      
-    ::-webkit-scrollbar-thumb {
-        background: #222121;
-    }
-      
-    
-    ::-webkit-scrollbar-thumb:hover {
-        background: black;
-    }
-
-    @media only screen and (min-width: 768px) {
-        .menu-icon {
-            display: none;
-        }
-
-        .navbar {
-            display: block;
-        }
-
-    }
-
-    @media only screen and (max-width: 768px) {
-        .heo h2 {
-            font-size: 28px;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/FoodWebsite/Images/quemtirarehgay.ico.ico">
+    <link rel="stylesheet" href="/FoodWebsite/receitas.css/receitas.css">
+    <title>Yakitori</title>
+    <style>
         
-    }
-
-
-  </Style>
-    
+    </style>
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <a href="" class="logo" >GostosoTudo</a>
+            <a href="/FoodWebsite/index.html" class="logo">FoodQuest</a>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
             <nav class="navbar">
-                <!-- &#9776 is a HTML entity that represents the "hamburger" menu icon (three horizontal lines). It’s often used in web design to indicate a menu that can be expanded or collapsed. -->
-                <div class="menu-icon">&#9776</div>
-                <!-- <label class="menu-icon" for="toggle">&#8801;</label> -->
-                
-                <a href="#">Home</a>
-                <a href="#">About</a> <!-- about.html -->
-                <a href="#">Contact</a> <!-- contact.html -->
-
+                <a href="#ingredientes">Ingredientes</a>
+                <a href="#preparo">Modo de Preparo</a>
+                <a href="#video-container">Tutorial</a>
             </nav>
         </div>
     </header>
 
     <section class="heo">
         <div class="class-heo">
-            <h2>Berinjela refogada simples</h2>
+            <h2></h2>
         </div>
     </section>
 
-    <div class="ingredientes">
-        <h2>Ingredientes</h2>
+    <h2 id="ingredientes">Ingredientes</h2>
+    <div id="checklist">
+        <input id="01" type="checkbox" name="i" value="1">
+        <label for="01">2 maços de cebolinha ou negi, aparados</label>
+        <input id="02" type="checkbox" name="i" value="2">
+        <label for="02">1-1/2 libras de peitos de frango</label>
+        <input id="03" type="checkbox" name="i" value="3">
+        <label for="03">desossados e sem pele</label>
         
-        <ul>
-        <li>1 berinjela</li>
-        <li>1 tomate picado</li>
-        <li>sal a gosto</li>
-        <li>azeite de oliva a gosto</li>
-        <li>1 cabeça de alho picada e amassada</li>
-        <li>1 cebola picada</li>
-        <li>1 pimentão verde cortado</li>
-        <li>Água</li>
-        </ul>
+        <input id="04" type="checkbox" name="i" value="1">
+        <label for="04">1 xícara de molho de soja</label>
+        <input id="05" type="checkbox" name="i" value="2">
+        <label for="05">3/4 xícara de açúcar</label>
+        <input id="06" type="checkbox" name="i" value="3">
+        <label for="06">Everything nice</label>
     </div>
 
-    <div class="preparo">
-    <h2>Modo de preparo</h2>
-        
-        <ol>
-        <li>Corte a berinjela em pedacinhos pequenos, mantendo as sementes e a casca, coloque em uma vasilha com água e sal para não ficar escura e reserve.</li>
-        <li>Em uma panela, ponha o tomate, a cebola, o pimentão, o alho e o sal e deixe refogando no azeite por 10 minutos.</li>
-        <li>Adicione um pouco de água para não ficar muito seco.</li>
-        <li>Por último acrescente a berinjela, deixe mais 10 minutos no fogo e está pronta para servir.</li>
-        </ol>
+    <h2 id="ingredientes">Ingredientes</h2>
+    <div id="checklist">
+        <input id="07" type="checkbox" name="i" value="4">
+        <label for="07">Sugar</label>
+        <input id="08" type="checkbox" name="i" value="5">
+        <label for="08">Spice</label>
+        <input id="09" type="checkbox" name="i" value="6">
+        <label for="09">Everything nice</label>
+
+        <input id="10" type="checkbox" name="i" value="1">
+        <label for="10">Sugar</label>
+        <input id="11" type="checkbox" name="i" value="2">
+        <label for="11">Spice</label>
+        <input id="12" type="checkbox" name="i" value="3">
+        <label for="12">Everything nice</label>
     </div>
+    <!-- <div class="preparo">
+        <h2 id="preparo">Modo de preparo</h2>
+        <ol>
+            <li>Cozinhe as batatas até ficarem bem moles.</li>
+            <br>
+            <li>Descasque-as ainda quentes e esprema as batatas no espremedor.</li>
+            <br>
+            <li>Despeje as batatas em um recipiente e acrescente a margarina, o sal e o alho, e mexa até que a margarina derreta por completo.</li>
+            <br>
+            <li>Acrescente o leite aos poucos e continue mexendo.</li>
+        </ol>
+    </div> -->
 
     <main class="table">
         <section class="table_header">
-            <h2>Informações nutricionais (a cada 100g)</h2>
+            <h2>Informações nutricionais</h2>
         </section>
         <section class="table_body">
             <table>
                 <thead>
                     <tr>
-                        <th> Calorias </th>
-                        <th> Proteínas </th>
-                        <th> Gorduras </th>
-                        <th> Carboidratos </th>
+                        <th>Calorias</th>
+                        <th>Proteínas</th>
+                        <th>Gorduras</th>
+                        <th>Carboidratos</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <td> 0g </td>
-                    <td> 0g </td>
-                    <td> 0g </td>
-                    <td> 0g </td>
+                    <tr>
+                        <td>0g</td>
+                        <td>0g</td>
+                        <td>0g</td>
+                        <td>0g</td>
+                    </tr>
                 </tbody>
             </table>
         </section>
     </main>
 
 
-    <!-- <div class="video">
-        <iframe src="https://youtu.be/-paE4bDAECQ?si=QsL4sxd-UOz3SN0N" 
-        frameborder="0" allowfullscreen class="iframe"></iframe>
-    </div> -->
-    
+    <div id="video-container">
+        <iframe src="https://youtu.be/3woUacOV5KQ?si=QgPr5LCIsCPm09qU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+
     <div class="preguica">
-        <h2>Curiosidades!</h2>
         <h3>Você sabia?</h3>
-        
-        <p>A Berinjela tem origem nas terras da Índia e da China e deve ser cultivado em terrenos areno-argilosos. Apesar de sua origem, o nome “Berinjela” é de origem persa com raiz no vocábulo árabe “badingana”.</p>
+        <p id="trivia">Durante a Guerra dos Sete Anos em meados dos anos 1700, um farmacêutico do exército francês, chamado Antoine-Augustin Parmentier, foi capturado por soldados prussianos. Como prisioneiro de guerra, ele foi forçado a viver de rações de batatas. Na França de meados do século 18, isso seria praticamente qualificado como uma punição cruel e incomum: as batatas eram consideradas um asco, alimento de porcos, e acreditavam que causavam lepra em humanos. De fato, o medo era tão generalizado que os franceses aprovaram uma lei contra elas em 1748.</p>
     </div>
 
     <footer>
         <div>
-            <p>&copy; 2024 GostosoTudo</p>
+            <p>&copy;2024 <a href="/FoodWebsite/index.html" style="text-decoration: none; color: white;">FoodQuest</a></p>
         </div>
     </footer>
 </body>
