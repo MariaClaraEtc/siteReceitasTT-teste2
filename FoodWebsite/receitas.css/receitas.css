@@ -209,13 +209,14 @@ input[type="checkbox"]:checked + label {
     padding: 1px 0 20px;
     text-align: center;
     color: white;
+    padding-top: 100px;
 }
 
 .table_body {
     color: white;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    padding-bottom: 200px;
+    padding-bottom: 100px;
 }
 
 table {
